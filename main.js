@@ -5,20 +5,16 @@ const input = document.getElementById("search");
 const submit = document.getElementById("submit");
 const url = "https://proxy.calweb.xyz/http://www.recipepuppy.com/api/";
 
-//fetching data from puppyrecipe api
-fetch(url).then(function (data) {
-  return data.json();
-}).then(function (data) {
-  console.log(data);
-
   let inputStr = "";
   let inputArr = [];
   let searchTerm = "";
   let searchQuery = "";
+  let searchUrl = "";
 
   submit.addEventListener('click', function() {
     inputStr += input.value;
     formatSearch();
+    searchData();
   })
 
   function formatSearch () {
@@ -31,9 +27,21 @@ fetch(url).then(function (data) {
     inputStr = "";
     inputArr = [];
     searchTerm = "";
+    console.log(searchQuery);
   }
 
-  
+  function searchData() {
+    searchUrl = url + searchQuery;
+    fetch(searchUrl).then(function (data) {
+      return data.json();
+    }).then(function (data) {
+      
+    })
 
+  }
 
-})
+  //fetching data from puppyrecipe api
+  // fetch(url).then(function (data) {
+  //   return data.json();
+  // }).then(function (data) {
+  //   console.log(data);
