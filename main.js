@@ -26,7 +26,6 @@ const url = "https://proxy.calweb.xyz/http://www.recipepuppy.com/api/";
     inputStr = "";
     inputArr = [];
     searchTerm = "";
-    console.log(searchQuery);
   }
 
   function searchData() {
@@ -34,7 +33,6 @@ const url = "https://proxy.calweb.xyz/http://www.recipepuppy.com/api/";
     fetch(searchUrl).then(function (data) {
       return data.json();
     }).then(function (data) {
-      console.log(data);
       let results = data.results;
       let title;
       let picture;
@@ -42,20 +40,18 @@ const url = "https://proxy.calweb.xyz/http://www.recipepuppy.com/api/";
 
       let resultsHTML;
       for (let i = 0; i < results.length; i++) {
-        resultsHTML = `
-        <div class="results">
-          <img class="results-pic" src=${picture} />
-          <a class="results-link" href=${link}>${title}</a>
-        </div>`;
         title = results[i].title;
-        console.log(title);
         if (results[i].thumbnail === "") {
           picture = "http://lorempixel.com/g/250/250/food";
         } else {
           picture = results[i].thumbnail;
         }
         link = results[i].href;
-        console.log(resultsHTML);
+        resultsHTML = `
+        <div class="results">
+          <img class="results-pic" src=${picture} />
+          <a class="results-link" href=${link}>${title}</a>
+        </div>`;
         resultsDiv.innerHTML += resultsHTML;
 
       }
@@ -63,3 +59,9 @@ const url = "https://proxy.calweb.xyz/http://www.recipepuppy.com/api/";
     })
 
   }
+
+  //fetching data from puppyrecipe api
+  // fetch(url).then(function (data) {
+  //   return data.json();
+  // }).then(function (data) {
+  //   console.log(data);

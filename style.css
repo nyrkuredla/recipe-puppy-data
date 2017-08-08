@@ -1,24 +1,66 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  width: 100vw;
 }
 
 header {
   background-color: grey;
   border: 1px solid black;
+  padding: 5%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+header h1 {
+  align-self: flex-end;
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0 auto;
+  text-align: right;
 }
 
 header input {
-  background-color: blue;
+  background-color: white;
   border: 1px solid black;
+  padding: 10px 20px;
 }
 
-div.row {
-  background-color: yellow;
-  border: 1px solid black;
+main {
+  width: 85%;
+  margin: 0 auto;
 }
 
-.row > div {
-  background-color: green;
-  border: 1px solid black;
+div#results {
+  background-color: white;
+  border: 1px dotted grey;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#results > div {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  padding: 3%;
+
+}
+
+#results > div > img {
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  border: 1px solid grey;
+}
+
+#results > div > a {
+  text-decoration: none;
+  text-align: center;
+  padding: 2%;
+  font-size: 1.2em;
+  margin: 0 auto;
+  color: black;
+  font-family: 'Dosis', sans-serif;
 }
