@@ -32,6 +32,7 @@ const url = "https://proxy.calweb.xyz/http://www.recipepuppy.com/api/";
       searchTerm += inputArr[i] + ",";
     }
     searchTerm += inputArr[(inputArr.length - 1)];
+    //query is based on 'ingredient search' parameters from recipepuppy API doc
     searchQuery = "?i=" + searchTerm;
     inputStr = "";
     inputArr = [];
