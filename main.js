@@ -25,10 +25,10 @@ const url = "https://proxy.calweb.xyz/http://www.recipepuppy.com/api/";
   function formatSearch () {
     inputArr = inputStr.split(" ");
     for (let i = 0; i < (inputArr.length - 1); i++) {
-      searchTerm += inputArr[i] + "-";
+      searchTerm += inputArr[i] + ",";
     }
     searchTerm += inputArr[(inputArr.length - 1)];
-    searchQuery = "?q=" + searchTerm;
+    searchQuery = "?i=" + searchTerm;
     inputStr = "";
     inputArr = [];
     searchTerm = "";
