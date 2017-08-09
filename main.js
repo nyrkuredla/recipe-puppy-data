@@ -16,6 +16,15 @@ const url = "https://proxy.calweb.xyz/http://www.recipepuppy.com/api/";
     searchData();
   })
 
+  input.addEventListener('keyup', function (event) {
+    //check to see if the enter key was pressed
+    if (event.which === 13) {
+      inputStr += input.value;
+      formatSearch();
+      searchData();
+    }
+  });
+
   function formatSearch () {
     inputArr = inputStr.split(" ");
     for (let i = 0; i < (inputArr.length - 1); i++) {
